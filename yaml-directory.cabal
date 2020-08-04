@@ -1,0 +1,44 @@
+name:                yaml-directory
+version:             0.1.0.0
+synopsis:            Load YAML from files in a directory structure
+homepage:            https://github.com/githubuser/yaml-directory#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Robbie McMichael
+maintainer:          Robbie McMichael
+copyright:           2020 Robbie McMichael
+category:            Codec
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  README.md
+
+library
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+  hs-source-dirs:      src
+
+  exposed-modules:
+      Data.Yaml.Directory
+
+  build-depends:
+      base >= 4.7 && < 5
+    , aeson
+    , filepath
+    , json-directory >= 0.1.0.1
+    , text
+    , yaml
+
+executable yamldir
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+  hs-source-dirs:      exe
+  main-is:             Main.hs
+
+  build-depends:
+      base >= 4.7 && < 5
+    , aeson
+    , aeson-pretty
+    , bytestring
+    , optparse-applicative
+    , yaml
+    , yaml-directory
